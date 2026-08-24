@@ -1,11 +1,11 @@
 # Graph Report - RHIS  (2026-08-24)
 
 ## Corpus Check
-- 250 files · ~104,912 words
+- 250 files · ~104,711 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2065 nodes · 4391 edges · 129 communities (105 shown, 24 thin omitted)
+- 2065 nodes · 4391 edges · 129 communities (106 shown, 23 thin omitted)
 - Extraction: 94% EXTRACTED · 6% INFERRED · 0% AMBIGUOUS · INFERRED: 278 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
@@ -17,10 +17,10 @@
 ## Community Hubs (Navigation)
 - org.springframework.data.jpa.repository.JpaRepository
 - lombok.RequiredArgsConstructor
-- ReportControllerSecurityTest
+- ReportPreviewServiceTest.java
 - ExportComponent
 - ReportJobProperties
-- ReportPreviewColumnResponse
+- ReportControllerSecurityTest
 - AuthController
 - DESIGN.md
 - ReportSnapshotReader
@@ -130,7 +130,7 @@
 - Research: <topic>
 - org.springframework.transaction.annotation.Transactional
 - PasswordResetTokenEntity
-- .getUserStats
+- .createUser
 - Frontend and UI guidelines
 - RHIS Frontend Agent Instructions
 - RHIS Backend Agent Instructions
@@ -172,7 +172,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (129 total, 24 thin omitted)
+## Communities (129 total, 23 thin omitted)
 
 ### Community 0 - "org.springframework.data.jpa.repository.JpaRepository"
 Cohesion: 0.11
@@ -182,9 +182,9 @@ Nodes (26): jakarta.persistence.Entity, jakarta.persistence.MappedSuperclass, ja
 Cohesion: 0.13
 Nodes (16): InputStreamResource, lombok.RequiredArgsConstructor, org.springframework.core.io.InputStreamResource, org.springframework.web.bind.annotation.DeleteMapping, org.springframework.web.bind.annotation.GetMapping, org.springframework.web.bind.annotation.PostMapping, org.springframework.web.bind.annotation.PutMapping, org.springframework.web.bind.annotation.RequestMapping (+8 more)
 
-### Community 2 - "ReportControllerSecurityTest"
-Cohesion: 0.25
-Nodes (4): org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest, org.springframework.context.annotation.Import, org.springframework.test.web.servlet.MockMvc, ReportControllerSecurityTest
+### Community 2 - "ReportPreviewServiceTest.java"
+Cohesion: 0.09
+Nodes (16): org.junit.jupiter.api.BeforeEach, org.junit.jupiter.api.extension.ExtendWith, org.mockito.junit.jupiter.MockitoExtension, FilterOperator, BETWEEN, CONTAINS, EQUALS, GREATER_THAN (+8 more)
 
 ### Community 3 - "ExportComponent"
 Cohesion: 0.05
@@ -194,9 +194,9 @@ Nodes (29): App, appConfig, RhisPreset, routes, Component, ReportDraft, ReportEx
 Cohesion: 0.20
 Nodes (7): org.springframework.boot.context.properties.ConfigurationProperties, ReportJobProperties, FileSystemReportArtifactStorage, Override, StorageDeleteException, ArtifactWriter, FunctionalInterface
 
-### Community 5 - "ReportPreviewColumnResponse"
-Cohesion: 0.14
-Nodes (9): java.sql.PreparedStatement, java.sql.ResultSet, ReportPreviewColumnResponse, ReportPreviewResponse, ReportQueryTimeoutException, ReportPreviewResponse, ReportPreviewExecutor, PreparedReportQuery (+1 more)
+### Community 5 - "ReportControllerSecurityTest"
+Cohesion: 0.11
+Nodes (12): java.sql.PreparedStatement, java.sql.ResultSet, org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest, org.springframework.context.annotation.Import, org.springframework.test.web.servlet.MockMvc, ReportPreviewResponse, ReportQueryTimeoutException, ReportPreviewResponse (+4 more)
 
 ### Community 6 - "AuthController"
 Cohesion: 0.14
@@ -239,8 +239,8 @@ Cohesion: 0.12
 Nodes (9): java.util.function.IntConsumer, net.sf.jasperreports.engine.JasperPrint, net.sf.jasperreports.engine.JRDataSource, net.sf.jasperreports.engine.JRField, Override, PdfReportExportWriter, SnapshotDataSource, Override (+1 more)
 
 ### Community 16 - "UserService"
-Cohesion: 0.10
-Nodes (13): org.springframework.security.access.prepost.PreAuthorize, PatchMapping, BulkStatusRequest, CreateUserRequest, UpdateUserRequest, UserDataResponse, DeleteMapping, PostMapping (+5 more)
+Cohesion: 0.11
+Nodes (11): org.springframework.security.access.prepost.PreAuthorize, PatchMapping, BulkStatusRequest, UserDataResponse, UserStatsResponse, DeleteMapping, GetMapping, RequestMapping (+3 more)
 
 ### Community 17 - "ReportSnapshotStorageTest"
 Cohesion: 0.19
@@ -303,8 +303,8 @@ Cohesion: 0.29
 Nodes (8): org.springframework.data.domain.Page, org.springframework.data.domain.Pageable, Entity, Getter, Setter, Table, UserEntity, UserRepository
 
 ### Community 33 - "DataSetEntity"
-Cohesion: 0.07
-Nodes (26): org.springframework.data.jpa.repository.EntityGraph, DataSetController, GetMapping, RequestMapping, RestController, DataSetMapper, DataSetFieldResponse, DataSetResponse (+18 more)
+Cohesion: 0.10
+Nodes (18): org.springframework.data.jpa.repository.EntityGraph, DataSetController, GetMapping, RequestMapping, RestController, DataSetMapper, DataSetFieldResponse, DataSetResponse (+10 more)
 
 ### Community 34 - "Administration des tables et champs — spécification UI/UX"
 Cohesion: 0.06
@@ -423,8 +423,8 @@ Cohesion: 0.60
 Nodes (3): org.springframework.boot.autoconfigure.SpringBootApplication, org.springframework.scheduling.annotation.EnableScheduling, RhisApplication
 
 ### Community 66 - "org.junit.jupiter.api.Test"
-Cohesion: 0.24
-Nodes (6): org.junit.jupiter.api.Test, ReportFilterRequest, ReportPreviewRequest, DataSetFieldTypeTest, ReportJobConfigurationTest, ReportPreviewServiceTest
+Cohesion: 0.23
+Nodes (7): org.junit.jupiter.api.Test, ReportFilterRequest, ReportPreviewRequest, ReportSortRequest, DataSetFieldTypeTest, ReportJobConfigurationTest, ReportPreviewServiceTest
 
 ### Community 67 - "Verified current behavior"
 Cohesion: 0.06
@@ -527,8 +527,8 @@ Cohesion: 0.08
 Nodes (23): Affected files and symbols, Approval, Change discipline, Completion, Current behavior, Decision Log, Draft, Executable plans (+15 more)
 
 ### Community 107 - "ReportPreviewPostgresIntegrationTest.java"
-Cohesion: 0.11
-Nodes (15): org.junit.jupiter.api.BeforeEach, org.junit.jupiter.api.extension.ExtendWith, org.mockito.junit.jupiter.MockitoExtension, org.springframework.boot.test.context.SpringBootTest, org.springframework.jdbc.core.JdbcTemplate, org.springframework.test.annotation.DirtiesContext, org.springframework.test.context.ActiveProfiles, org.testcontainers.junit.jupiter.Testcontainers (+7 more)
+Cohesion: 0.20
+Nodes (7): org.springframework.boot.test.context.SpringBootTest, org.springframework.jdbc.core.JdbcTemplate, org.springframework.test.annotation.DirtiesContext, org.springframework.test.context.ActiveProfiles, org.testcontainers.junit.jupiter.Testcontainers, org.testcontainers.postgresql.PostgreSQLContainer, ReportPreviewPostgresIntegrationTest
 
 ### Community 108 - "Codex Project Workflow Design"
 Cohesion: 0.11
@@ -557,6 +557,10 @@ Nodes (3): org.springframework.transaction.annotation.Transactional, ReportJobSt
 ### Community 114 - "PasswordResetTokenEntity"
 Cohesion: 0.20
 Nodes (9): AllArgsConstructor, Builder, Entity, Getter, NoArgsConstructor, Setter, Table, PasswordResetTokenEntity (+1 more)
+
+### Community 115 - ".createUser"
+Cohesion: 0.20
+Nodes (4): CreateUserRequest, UpdateUserRequest, PostMapping, PutMapping
 
 ### Community 116 - "Frontend and UI guidelines"
 Cohesion: 0.18
@@ -597,7 +601,7 @@ Nodes (4): build, builder, configurations, defaultConfiguration
 ## Knowledge Gaps
 - **647 isolated node(s):** `$schema`, `version`, `newProjectRoot`, `projectType`, `style` (+642 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -606,7 +610,7 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **Why does `XlsxReportExportWriter` connect `XlsxReportExportWriter` to `ReportJobProperties`, `ReportSnapshotReader`, `DataSetFieldType`, `ReportSnapshotStorageTest`, `org.springframework.stereotype.Component`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `UserEntity` connect `UserEntity` to `ReportControllerSecurityTest`, `DataSetInitializer`, `RefreshTokenEntity`, `ReportGenerationEntity`, `ReportPreviewPostgresIntegrationTest.java`, `AuthServiceImpl`, `RoleEntity`, `UserService`, `ReportGenerationController`, `PasswordResetTokenEntity`, `org.springframework.stereotype.Service`, `UserPrincipal`, `BaseEntity`?**
+- **Why does `UserEntity` connect `UserEntity` to `ReportControllerSecurityTest`, `DataSetInitializer`, `RefreshTokenEntity`, `ReportGenerationEntity`, `ReportPreviewPostgresIntegrationTest.java`, `AuthServiceImpl`, `RoleEntity`, `UserService`, `ReportGenerationController`, `PasswordResetTokenEntity`, `.createUser`, `org.springframework.stereotype.Service`, `UserPrincipal`, `BaseEntity`?**
   _High betweenness centrality (0.013) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `ReportJobProperties` (e.g. with `.storage()` and `.keepsExportProgressMonotonicWhenWriterCallbacksDecreaseOrExceedTheMaximum()`) actually correct?**
   _`ReportJobProperties` has 4 INFERRED edges - model-reasoned connections that need verification._
